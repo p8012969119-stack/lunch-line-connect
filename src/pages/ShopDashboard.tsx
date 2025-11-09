@@ -100,34 +100,49 @@ const ShopDashboard = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <Card>
               <CardHeader className="pb-3">
-                <CardTitle className="text-sm font-medium text-muted-foreground">
-                  Pending Orders
-                </CardTitle>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center">
+                    <Clock className="w-6 h-6 text-amber-500" />
+                  </div>
+                  <CardTitle className="text-sm font-medium text-muted-foreground">
+                    Pending Orders
+                  </CardTitle>
+                </div>
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold text-amber-500">{stats.pending}</div>
+                <div className="text-4xl font-bold text-amber-500">{stats.pending}</div>
               </CardContent>
             </Card>
 
             <Card>
               <CardHeader className="pb-3">
-                <CardTitle className="text-sm font-medium text-muted-foreground">
-                  Preparing
-                </CardTitle>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                    <UtensilsCrossed className="w-6 h-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-sm font-medium text-muted-foreground">
+                    Preparing
+                  </CardTitle>
+                </div>
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold text-primary">{stats.preparing}</div>
+                <div className="text-4xl font-bold text-primary">{stats.preparing}</div>
               </CardContent>
             </Card>
 
             <Card>
               <CardHeader className="pb-3">
-                <CardTitle className="text-sm font-medium text-muted-foreground">
-                  Ready for Pickup
-                </CardTitle>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center">
+                    <Check className="w-6 h-6 text-green-500" />
+                  </div>
+                  <CardTitle className="text-sm font-medium text-muted-foreground">
+                    Ready for Pickup
+                  </CardTitle>
+                </div>
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold text-green-500">{stats.ready}</div>
+                <div className="text-4xl font-bold text-green-500">{stats.ready}</div>
               </CardContent>
             </Card>
           </div>

@@ -1,10 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Salad, Drumstick, Sandwich, Coffee, Cake } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const menuCategories = [
   {
-    category: "🥗 Veg Meals",
+    category: "Veg Meals",
+    icon: Salad,
     items: [
       { name: "Veg Thali", price: 80 },
       { name: "Paneer Butter Masala", price: 120 },
@@ -13,7 +15,8 @@ const menuCategories = [
     ],
   },
   {
-    category: "🍗 Non-Veg Meals",
+    category: "Non-Veg Meals",
+    icon: Drumstick,
     items: [
       { name: "Chicken Biryani", price: 150 },
       { name: "Fish Curry", price: 140 },
@@ -22,7 +25,8 @@ const menuCategories = [
     ],
   },
   {
-    category: "🍟 Snacks",
+    category: "Snacks",
+    icon: Sandwich,
     items: [
       { name: "Samosa", price: 20 },
       { name: "French Fries", price: 40 },
@@ -31,7 +35,8 @@ const menuCategories = [
     ],
   },
   {
-    category: "🧃 Fresh Juices",
+    category: "Fresh Juices",
+    icon: Coffee,
     items: [
       { name: "Mango Juice", price: 30 },
       { name: "Orange Juice", price: 30 },
@@ -40,7 +45,8 @@ const menuCategories = [
     ],
   },
   {
-    category: "🍰 Cakes & Desserts",
+    category: "Cakes & Desserts",
+    icon: Cake,
     items: [
       { name: "Chocolate Cake", price: 60 },
       { name: "Black Forest", price: 80 },
@@ -68,7 +74,12 @@ const Menu = () => {
             {menuCategories.map((category, idx) => (
               <Card key={idx} className="animate-slide-up hover-lift">
                 <CardHeader>
-                  <CardTitle className="text-2xl">{category.category}</CardTitle>
+                  <CardTitle className="text-2xl flex items-center gap-3">
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                      <category.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    {category.category}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

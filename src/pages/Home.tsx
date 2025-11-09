@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { GraduationCap, Store, Salad, Pizza, Coffee, Cake } from "lucide-react";
+import { GraduationCap, Store, Salad, Pizza, Coffee, Cake, Utensils, Timer, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
@@ -13,10 +13,12 @@ const Home = () => {
       {/* Hero Section */}
       <section className="gradient-hero py-20 px-4 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <Pizza className="absolute top-10 left-10 w-16 h-16 animate-float" />
-          <Coffee className="absolute top-20 right-20 w-12 h-12 animate-float" style={{ animationDelay: '1s' }} />
-          <Cake className="absolute bottom-20 left-1/4 w-14 h-14 animate-float" style={{ animationDelay: '2s' }} />
-          <Salad className="absolute bottom-10 right-1/4 w-16 h-16 animate-float" style={{ animationDelay: '1.5s' }} />
+          <Pizza className="absolute top-10 left-10 w-20 h-20 animate-float" />
+          <Coffee className="absolute top-20 right-20 w-16 h-16 animate-float" style={{ animationDelay: '1s' }} />
+          <Cake className="absolute bottom-20 left-1/4 w-18 h-18 animate-float" style={{ animationDelay: '2s' }} />
+          <Salad className="absolute bottom-10 right-1/4 w-20 h-20 animate-float" style={{ animationDelay: '1.5s' }} />
+          <Utensils className="absolute top-1/2 left-20 w-14 h-14 animate-float" style={{ animationDelay: '0.5s' }} />
+          <Utensils className="absolute top-1/3 right-10 w-16 h-16 animate-float" style={{ animationDelay: '2.5s' }} />
         </div>
 
         <div className="container mx-auto text-center relative z-10">
@@ -54,8 +56,8 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="p-6 hover-lift cursor-pointer">
               <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Pizza className="w-8 h-8 text-primary" />
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Utensils className="w-10 h-10 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Wide Variety</h3>
                 <p className="text-muted-foreground">
@@ -66,8 +68,8 @@ const Home = () => {
 
             <Card className="p-6 hover-lift cursor-pointer">
               <div className="text-center">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Coffee className="w-8 h-8 text-accent" />
+                <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Timer className="w-10 h-10 text-accent" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Quick Service</h3>
                 <p className="text-muted-foreground">
@@ -78,8 +80,8 @@ const Home = () => {
 
             <Card className="p-6 hover-lift cursor-pointer">
               <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Cake className="w-8 h-8 text-primary" />
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="w-10 h-10 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Fresh & Hygienic</h3>
                 <p className="text-muted-foreground">

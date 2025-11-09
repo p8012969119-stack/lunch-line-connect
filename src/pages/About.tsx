@@ -6,22 +6,22 @@ import Footer from "@/components/Footer";
 const About = () => {
   const features = [
     {
-      icon: <Lightbulb className="w-12 h-12 text-primary" />,
+      icon: <Lightbulb className="w-16 h-16 text-primary" />,
       title: "Innovative Idea",
       description: "A digital solution that revolutionizes campus food ordering",
     },
     {
-      icon: <ChefHat className="w-12 h-12 text-accent" />,
+      icon: <ChefHat className="w-16 h-16 text-accent" />,
       title: "Expert Chefs",
       description: "Experienced culinary team preparing fresh meals daily",
     },
     {
-      icon: <Clock className="w-12 h-12 text-primary" />,
+      icon: <Clock className="w-16 h-16 text-primary" />,
       title: "Fast Service",
       description: "Quick order processing and minimal waiting time",
     },
     {
-      icon: <Receipt className="w-12 h-12 text-accent" />,
+      icon: <Receipt className="w-16 h-16 text-accent" />,
       title: "Transparent Billing",
       description: "Clear pricing with no hidden charges",
     },
@@ -62,9 +62,11 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             {features.map((feature, idx) => (
               <Card key={idx} className="hover-lift animate-slide-up">
-                <CardContent className="p-6 text-center">
-                  <div className="flex justify-center mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+                <CardContent className="p-8 text-center">
+                  <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                   <p className="text-muted-foreground">{feature.description}</p>
                 </CardContent>
               </Card>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ShoppingCart, Plus, Minus, CreditCard, Smartphone, Banknote, X } from "lucide-react";
+import { ShoppingCart, Plus, Minus, CreditCard, Smartphone, Banknote, X, Salad, Drumstick, Sandwich, Coffee, Cake, ChefHat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -15,20 +15,20 @@ type FoodItem = {
   name: string;
   category: string;
   price: number;
-  icon: string;
+  icon: React.ComponentType<{ className?: string }>;
 };
 
 const foodItems: FoodItem[] = [
-  { id: 1, name: "Veg Thali", category: "veg", price: 80, icon: "🥗" },
-  { id: 2, name: "Paneer Butter Masala", category: "veg", price: 120, icon: "🍛" },
-  { id: 3, name: "Chicken Biryani", category: "non-veg", price: 150, icon: "🍗" },
-  { id: 4, name: "Fish Curry", category: "non-veg", price: 140, icon: "🐟" },
-  { id: 5, name: "Samosa", category: "snacks", price: 20, icon: "🥟" },
-  { id: 6, name: "French Fries", category: "snacks", price: 40, icon: "🍟" },
-  { id: 7, name: "Mango Juice", category: "juice", price: 30, icon: "🧃" },
-  { id: 8, name: "Orange Juice", category: "juice", price: 30, icon: "🍊" },
-  { id: 9, name: "Chocolate Cake", category: "cake", price: 60, icon: "🍰" },
-  { id: 10, name: "Black Forest", category: "cake", price: 80, icon: "🎂" },
+  { id: 1, name: "Veg Thali", category: "veg", price: 80, icon: Salad },
+  { id: 2, name: "Paneer Butter Masala", category: "veg", price: 120, icon: ChefHat },
+  { id: 3, name: "Chicken Biryani", category: "non-veg", price: 150, icon: Drumstick },
+  { id: 4, name: "Fish Curry", category: "non-veg", price: 140, icon: Drumstick },
+  { id: 5, name: "Samosa", category: "snacks", price: 20, icon: Sandwich },
+  { id: 6, name: "French Fries", category: "snacks", price: 40, icon: Sandwich },
+  { id: 7, name: "Mango Juice", category: "juice", price: 30, icon: Coffee },
+  { id: 8, name: "Orange Juice", category: "juice", price: 30, icon: Coffee },
+  { id: 9, name: "Chocolate Cake", category: "cake", price: 60, icon: Cake },
+  { id: 10, name: "Black Forest", category: "cake", price: 80, icon: Cake },
 ];
 
 const StudentDashboard = () => {
@@ -86,11 +86,11 @@ const StudentDashboard = () => {
   };
 
   const categories = [
-    { name: "Veg Meals", icon: "🥗", filter: "veg" },
-    { name: "Non-Veg Meals", icon: "🍗", filter: "non-veg" },
-    { name: "Snacks", icon: "🍟", filter: "snacks" },
-    { name: "Fresh Juices", icon: "🧃", filter: "juice" },
-    { name: "Cakes", icon: "🎂", filter: "cake" },
+    { name: "Veg Meals", icon: Salad, filter: "veg" },
+    { name: "Non-Veg Meals", icon: Drumstick, filter: "non-veg" },
+    { name: "Snacks", icon: Sandwich, filter: "snacks" },
+    { name: "Fresh Juices", icon: Coffee, filter: "juice" },
+    { name: "Cakes", icon: Cake, filter: "cake" },
   ];
 
   return (
@@ -116,8 +116,10 @@ const StudentDashboard = () => {
 
           {categories.map((category) => (
             <div key={category.filter} className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <span className="text-3xl">{category.icon}</span>
+              <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <category.icon className="w-6 h-6 text-primary" />
+                </div>
                 {category.name}
               </h2>
               
@@ -128,12 +130,14 @@ const StudentDashboard = () => {
                     <Card key={item.id} className="hover-lift overflow-hidden">
                       <CardHeader className="pb-4">
                         <div className="flex justify-between items-start">
-                          <div>
-                            <CardTitle className="flex items-center gap-2">
-                              <span className="text-3xl">{item.icon}</span>
-                              {item.name}
-                            </CardTitle>
-                            <CardDescription className="text-xl font-bold text-primary mt-2">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-3 mb-2">
+                              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                                <item.icon className="w-6 h-6 text-primary" />
+                              </div>
+                              <CardTitle className="text-lg">{item.name}</CardTitle>
+                            </div>
+                            <CardDescription className="text-2xl font-bold text-primary">
                               ₹{item.price}
                             </CardDescription>
                           </div>

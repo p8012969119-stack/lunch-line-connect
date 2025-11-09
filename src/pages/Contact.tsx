@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -95,11 +95,11 @@ const Contact = () => {
               <Card>
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-primary/10 rounded-full">
-                      <Phone className="w-6 h-6 text-primary" />
+                    <div className="p-4 bg-primary/10 rounded-xl">
+                      <Phone className="w-8 h-8 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-bold mb-1">Phone</h3>
+                      <h3 className="font-bold text-lg mb-2">Phone</h3>
                       <p className="text-muted-foreground">+91 98765 43210</p>
                       <p className="text-muted-foreground">+91 98765 43211</p>
                     </div>
@@ -110,11 +110,11 @@ const Contact = () => {
               <Card>
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-accent/10 rounded-full">
-                      <Mail className="w-6 h-6 text-accent" />
+                    <div className="p-4 bg-accent/10 rounded-xl">
+                      <Mail className="w-8 h-8 text-accent" />
                     </div>
                     <div>
-                      <h3 className="font-bold mb-1">Email</h3>
+                      <h3 className="font-bold text-lg mb-2">Email</h3>
                       <p className="text-muted-foreground">canteen@campus.edu</p>
                       <p className="text-muted-foreground">support@campuscanteen.com</p>
                     </div>
@@ -125,11 +125,11 @@ const Contact = () => {
               <Card>
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-primary/10 rounded-full">
-                      <MapPin className="w-6 h-6 text-primary" />
+                    <div className="p-4 bg-primary/10 rounded-xl">
+                      <MapPin className="w-8 h-8 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-bold mb-1">Location</h3>
+                      <h3 className="font-bold text-lg mb-2">Location</h3>
                       <p className="text-muted-foreground">
                         Campus Canteen, Ground Floor<br />
                         Main Building, College Campus<br />
@@ -141,10 +141,13 @@ const Contact = () => {
               </Card>
 
               <Card className="bg-gradient-warm text-white">
-                <CardContent className="p-6 text-center">
-                  <h3 className="font-bold text-lg mb-2">Operating Hours</h3>
-                  <p className="mb-1">Monday - Friday: 8:00 AM - 6:00 PM</p>
-                  <p>Saturday: 9:00 AM - 4:00 PM</p>
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Clock className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="font-bold text-xl mb-3">Operating Hours</h3>
+                  <p className="mb-2 text-lg">Monday - Friday: 8:00 AM - 6:00 PM</p>
+                  <p className="text-lg">Saturday: 9:00 AM - 4:00 PM</p>
                 </CardContent>
               </Card>
             </div>
